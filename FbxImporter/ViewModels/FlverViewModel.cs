@@ -175,7 +175,7 @@ public class FlverViewModel : ViewModelBase
             throw new InvalidDataException($"No matching vertex was found for vertex {position}.\n Make sure to enable \"Do Not Split Vertices\" in the Havok Export Utility.\nIf the issue persists, export a version of the cloth data with \"Collapse Verts\" disabled in your sim mesh.");
     }
 
-    private static List<FLVER.Vertex> GetMatchingVertices(Vector3 position, FLVER2.Mesh mesh, bool mirrorX, double accuracy = 0.00001)
+    private static List<FLVER.Vertex> GetMatchingVertices(Vector3 position, FLVER2.Mesh mesh, bool mirrorX, double accuracy = 0.001)
     {
         int xSign = mirrorX ? -1 : 1;
         return mesh.Vertices.Where(x =>

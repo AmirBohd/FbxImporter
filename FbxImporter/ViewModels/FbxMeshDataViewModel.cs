@@ -39,7 +39,10 @@ public class FbxMeshDataViewModel
         gxList.AddRange(options.MaterialInfoBank.GetDefaultGXItemsForMTD(options.MTD));
 
         List<FLVER2.BufferLayout> bufferLayouts =
-            options.MaterialInfoBank.MaterialDefs[options.MTD].AcceptableVertexBufferDeclarations[0].Buffers;
+            options.MaterialInfoBank.MaterialDefs[options.MTD].AcceptableVertexBufferDeclarations.FirstOrDefault(x =>
+                x.Buffers.SelectMany(y => y).Count(y => y.Semantic == FLVER.LayoutSemantic.Tangent) >=
+                VertexData[0].Tangents.Count)?.Buffers ?? options.MaterialInfoBank.MaterialDefs[options.MTD]
+                .AcceptableVertexBufferDeclarations[0].Buffers;
 
         List<int> layoutIndices = GetLayoutIndices(flver, bufferLayouts);
 

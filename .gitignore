@@ -4,3 +4,9 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 FbxImporter.sln.DotSettings.user
+FbxImporter/SoulsFormats.dll
+FbxImporter/SoulsAssetPipeline.dll
+FbxImporter/SoulsFormats.xml
+.vs/
+Backup/
+FbxImporter.sln
