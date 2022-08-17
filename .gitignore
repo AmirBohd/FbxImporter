@@ -7,3 +7,7 @@ FbxImporter.sln.DotSettings.user
 .vs/*
 x64/*
 FbxDataExtractor/x64/*
+FbxImporter/SoulsFormats.xml
+FbxImporter/SoulsFormats.dll
+FbxImporter/SoulsAssetPipeline.dll
+Backup/FbxImporter.sln
